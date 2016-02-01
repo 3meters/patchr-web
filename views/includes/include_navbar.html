@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation"
+role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
+                <span class="sr-only">
+                    Toggle navigation
+                </span>
+                <span class="icon-bar">
+                </span>
+                <span class="icon-bar">
+                </span>
+                <span class="icon-bar">
+                </span>
+            </button>
+            <a class="navbar-brand" href="home"><img src="images/logo.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse" id="kane-navigation">
+            <ul class="nav navbar-nav navbar-right main-navigation">
+                <li <?=echoActiveClassIfRequestMatches("home")?>>
+                    <a href="home">Patch</a>
+                </li>
+                <li <?=echoActiveClassIfRequestMatches("download")?>>
+                    <a href="download">Download</a>
+                </li>
+                <li <?=echoActiveClassIfRequestMatches("blog")?>>
+                    <a href="http://blog.candipatch.com">Blog</a>
+                </li>
+<!--                 <li>
+                    <a href="forums">Forums</a>
+                </li>
+ -->            </ul>
+        </div>
+    </div>
+</nav>

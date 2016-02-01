@@ -1,0 +1,138 @@
+/*
+  COLOR : ORANGE
+  MAIN COLOR CODE: #ea8825
+  DEEP COLOR CODE: #ac5330
+-------------------------------------------------- */
+
+a {
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  color: #ea8825;
+  text-decoration: none;
+}
+
+a:hover {
+    color: #AC5330;
+    text-decoration: none;
+}
+
+/*  NAVBAR
+-------------------------------------------------- */
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    color:#c2c2c2;
+    background-color:#ffffff
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:#000000
+}
+
+
+/*  FORUMS
+-------------------------------------------------- */
+
+.muut .m-header {
+   background-color: #dddddd;
+}
+
+/*  Light main links on dark background  */
+.m-navi a,
+.m-nav-account span {
+  color: #ea8825
+}
+
+.m-navi a:hover,
+.m-nav-account span:hover {
+  color: #ea8825
+}
+
+.m-navi a.m-selected, .m-nav-account span.m-selected {
+  color: #333 !important
+}
+
+
+/*  CANDIPATCH
+-------------------------------------------------- */
+
+.color-overlay {
+     background: rgba(0, 0, 0, 0.30);
+   /* background: url(../patterns/06.png); */
+}
+
+.standard-button {
+    background: #ea8825;
+}
+
+.standard-button2 {
+    background: #ea8825;
+}
+
+.standard-button2:hover {
+    background: #AC5330;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background: #AC5330;
+    border-color: inherit;
+}
+
+.colored-line,
+.colored-line-left {
+    background: #ea8825;
+}
+
+.main-color {
+    color: #ea8825;
+}
+
+.features .feature:hover .icon-container .icon {
+    background: #ea8825;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    -webkit-box-shadow: 0px 0px 0px 2px #ea8825;
+            box-shadow: 0px 0px 0px 2px #ea8825;
+}
+
+.features .feature .icon-container .icon {
+    border: 1px solid #ea8825;
+    color: #ea8825;
+}
+
+.feature-list li i {
+    color: #ea8825;
+}
+
+.services .single-service .service-icon,
+.services .single-service h3 {
+    color: #ea8825;
+}
+
+.screenshots .owl-theme .owl-controls .owl-page span {
+    background: #ea8825;
+}
+
+.contact .contact-button {
+    border: 2px solid #ea8825;
+    color: #ea8825;
+}
+
+.contact .contact-button:hover {
+    background: #ea8825;
+}
+
+.contact .contact-box .expanded-contact-form .input-box:active,
+.contact .contact-box .expanded-contact-form .textarea-box:active,
+.contact .contact-box .expanded-contact-form .input-box:focus,
+.contact .contact-box .expanded-contact-form .textarea-box:focus {
+    border: 1px solid #ea8825;
+}
+
+.social .social-icons li a:hover {
+    color: #ea8825;
+/

@@ -1,0 +1,83 @@
+application: com-3meters-web
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+includes:
+- patch.yaml
+- message.yaml
+
+handlers:
+# Serve static resources by directory
+- url: /images
+  static_dir: assets/images
+  mime_type: image/*
+  expiration: 1s
+
+- url: /video
+  static_dir: assets/video
+  mime_type: video/*
+  expiration: 1s
+
+- url: /js
+  static_dir: assets/js
+  mime_type: application/javascript
+  expiration: 1s
+
+- url: /css
+  static_dir: assets/css
+  mime_type: text/css
+  expiration: 1s
+
+- url: /fonts
+  static_dir: assets/fonts
+  mime_type: application/*
+  expiration: 1s
+
+- url: /(.+\.(gif|png|jpg))$
+  static_files: \1
+  upload: (.+\.(gif|png|jpg))$
+  mime_type: image/*
+  application_readable: true
+
+- url: /(.+\.css)$
+  static_files: \1
+  upload: (.+\.css)$
+  mime_type: text/css
+  application_readable: true
+
+# Serve non-static pages by name
+- url: /(.+\.(php|html))$
+  script: \1
+
+# Serve non-static pages by endpoint
+- url: /
+  script: views/teaser.html
+
+- url: /home
+  script: views/teaser.html
+
+- url: /about
+  script: views/about.html
+
+- url: /contact
+  script: views/contact.html
+
+- url: /download
+  script: views/download.html
+
+- url: /privacy
+  script: views/privacy.html
+
+- url: /terms
+  script: views/terms.html
+
+- url: /android
+  script: views/android.html
+
+- url: /ios
+  script: views/ios.html
+
+- url: /rules
+  script: views/rules.html

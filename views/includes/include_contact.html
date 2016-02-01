@@ -1,0 +1,47 @@
+<div class="contact-box wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+
+    <!-- CONTACT BUTTON TO EXPAND OR COLLAPSE FORM -->
+    <a class="btn contact-button expand-form"><i class="icon_mail_alt"></i></a>
+
+    <!-- EXPANDED CONTACT FORM -->
+    <!-- Code for this is in custom.js and binds to the form id -->
+    <div class="row expanded-contact-form">
+        <div class="col-md-8 col-md-offset-2">
+            <!-- FORM -->
+            <form class="contact-form" id="contact" role="form">
+                <!-- IF MAIL SENT SUCCESSFULLY -->
+                <h4 class="success">
+                    <i class="icon_check">
+                    </i>
+                    Your message has been sent successfully.
+                </h4>
+                <!-- IF MAIL SENDING UNSUCCESSFULL -->
+                <h4 class="error">
+                    <i class="icon_error-circle_alt">
+                    </i>
+                    E-mail must be valid and message must be longer than 1 character.
+                </h4>
+                <div class="col-md-6">
+                    <input class="form-control input-box" id="name" type="text" name="name"
+                    placeholder="Your Name">
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control input-box" id="email" type="email" name="email"
+                    placeholder="Your Email">
+                </div>
+                <div class="col-md-12">
+                    <input class="form-control input-box" id="subject" type="text" name="subject"
+                    placeholder="Subject">
+                    <textarea class="form-control textarea-box" id="message" rows="8" placeholder="Message">
+                    </textarea>
+                </div>
+                <button class="btn btn-primary standard-button2 ladda-button" type="submit"
+                    id="submit" name="submit" data-style="expand-left">
+                    Send Message
+                </button>
+            </form>
+            <!-- /END FORM -->
+        </div>
+    </div>
+    <!-- /END EXPANDED CONTACT FORM -->
+</div>

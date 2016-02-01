@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation"
+role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- LOGO ON STICKY NAV BAR -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
+                <span class="sr-only">
+                    Toggle navigation
+                </span>
+                <span class="icon-bar">
+                </span>
+                <span class="icon-bar">
+                </span>
+                <span class="icon-bar">
+                </span>
+            </button>
+            <a class="navbar-brand" href="home"><img src="images/logo.png" alt=""></a>
+        </div>
+        <!-- NAVIGATION LINKS -->
+        <div class="navbar-collapse collapse" id="kane-navigation">
+            <ul class="nav navbar-nav navbar-right main-navigation">
+                <li class="dropdown" <?=echoActiveClassIfRequestMatches("home")?>>
+                    <a href="home" class="dropdown-toggle" data-toggle="dropdown">3meters <b class="caret"></b></a>
+                    <ul class="dropdown-menu scroll-navigation">
+                        <li>
+                            <a href="#intro">Home</a>
+                        </li>
+                        <li>
+                            <a href="#super_contributor">Us</a>
+                        </li>
+                        <li>
+                            <a href="#download">Subscribe</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /END NAVIGATION LINKS -->
+    </div>
+    <!-- /END CONTAINER -->
+</nav>
+<!-- /END STICKY NAVIGATION -->

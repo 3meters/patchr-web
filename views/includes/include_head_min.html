@@ -1,0 +1,33 @@
+<!-- *** FAV AND TOUCH ICONS *** -->
+<link rel="icon" href="favicon.ico">
+
+<!-- FONT ICONS -->
+<link rel="stylesheet" href="css/elegant-icons.css">
+<link rel="stylesheet" href="css/app-icons.css">
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!--[if lte IE 7]>
+    <script src="js/elegant-icons-lte-ie7.js"></script>
+<![endif]-->
+
+<!-- CUSTOM STYLESHEETS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" href="css/orange.css">
+
+<!-- RESPONSIVE FIXES -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+<?php
+function echoActiveClassIfRequestMatches($requestUri) {
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".html");
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
+}?>

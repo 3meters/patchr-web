@@ -1,0 +1,33 @@
+handlers:
+# Serve static resources by directory
+- url: /patch/images
+  static_dir: images
+  mime_type: image/*
+  expiration: 1s
+
+- url: /patch/video
+  static_dir: video
+  mime_type: video/*
+  expiration: 1s
+
+- url: /patch/js
+  static_dir: js
+  mime_type: application/javascript
+  expiration: 1s
+
+- url: /patch/css
+  static_dir: css
+  mime_type: text/css
+  expiration: 1s
+
+- url: /patch/fonts
+  static_dir: fonts
+  mime_type: application/*
+  expiration: 1s
+
+# Catch patch requests and redirect
+- url: /patch/pl.*
+  script: download.html
+
+- url: /patch
+  script: download.html

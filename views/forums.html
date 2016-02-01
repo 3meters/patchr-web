@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Patch forums">
+        <meta name="keywords" content="Patch, Social, Sharing, Places, Location, App, Mobile, Android">
+        <meta name="author" content="3meters">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- SITE TITLE -->
+        <title>
+            Patch | Forums
+        </title>
+        <?php include "includes/include_head_min.html"; ?>
+            <!-- FORUMS -->
+            <link rel="stylesheet" href="https://cdn.muut.com/1/moot.css" />
+            <script src="http://cdn.muut.com/1/moot.min.js"></script>
+            <!-- Override for fat sticky footer -->
+            <style>
+                .muut { min-height:500px; overflow: auto; }
+                body { margin-bottom: 130px; }
+                footer { height: 130px; }
+            </style>
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <header class="navigation" id="home">
+            <?php include "includes/include_navbar.html"; ?>
+        </header>
+        <!-- FORUMS -->
+        <section class="forums">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- SECTION HEADER -->
+                <div class="section-header-compact wow fadeIn animated" data-wow-offset="120"
+                data-wow-duration="1.5s">
+                    <!-- SECTION TITLE -->
+                    <h2 class="dark-text">
+                        Forums
+                    </h2>
+                    <div class="colored-line">
+                    </div>
+                    <div class="section-description">
+                        Help us make Patch better with your feedback, ideas, and issues
+                    </div>
+                    <div class="colored-line">
+                    </div>
+                </div>
+                <!-- /END SECTION HEADER -->
+                <div class="muut" style="text-align:left">
+                    <a class="muut-url" href="https://muut.com/i/candipatch">Patch Forums</a>
+                    <!-- Custom Sidebar -->
+                    <div class="m-h3 m-forums-title">
+                        Patch
+                    </div>
+                    <div class="m-forums m-links">
+                        <a href="#!/feedback">Feedback</a>
+                        <a href="#!/features">Features</a>
+                        <a href="#!/issues">Issues</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /END CONTAINER -->
+        </section>
+
+        <footer>
+            <?php include "includes/include_footer_logo.html"; ?>
+        </footer>
+
+        <?php include "includes/include_scripts.html"; ?>
+    </body>
+
+</html>

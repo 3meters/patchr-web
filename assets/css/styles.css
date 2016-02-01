@@ -1,0 +1,1025 @@
+
+/*  Kane - Responsive App Landing Page
+-------------------------------------------------- */
+
+/*  WEB FONTS
+-------------------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic);
+
+/*  GLOBAL STYLES
+-------------------------------------------------- */
+
+html {
+    font-size: 100%;
+    position: relative;
+     /* Sticky footer */
+    min-height: 100%;
+       /* Sticky footer */
+}
+
+/*body {
+    background: #232323;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #313131;
+    line-height: 28px;
+    text-align: center;
+    overflow-x: hidden !important;
+    margin: auto !important;
+}
+*/
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #313131;
+    line-height: 28px;
+    text-align: center;
+    overflow-x: hidden !important;
+    /* margin-top: 60px; room for nav bar */
+    /* margin-bottom: 50px; */
+   /* Sticky footer */
+}
+
+/* Internet Explorer 10 in Windows 8 and Windows Phone 8 Bug fix */
+
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+a {
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn:focus,
+.btn:active {
+    outline: inherit;
+}
+
+
+/* Other fixes*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* PRE LOADER */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fefefe;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.status {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(../images/loading_spinner.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin: -20px 0 0 -20px;
+}
+
+/*  Typography
+-------------------------------------------------- */
+
+/* FONT FACE LOADER */
+
+@font-face {
+    font-family: 'Lane';
+    src: url('../fonts/lanenar_Lane.eot');
+    src: url('../fonts/lanenar_Lane.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/lanenar_Lane.svg#Lane') format('svg'),
+        url('../fonts/lanenar_Lane.woff') format('woff'),
+        url('../fonts/lanenar_Lane.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular-webfont.eot');
+    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Italic-webfont.eot');
+    src: url('../fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Italic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Italic-webfont.svg#RobotoItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold-webfont.svg#RobotoBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-BoldItalic-webfont.eot');
+    src: url('../fonts/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-BoldItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-BoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-BoldItalic-webfont.svg#RobotoBoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Thin-webfont.eot');
+    src: url('../fonts/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Thin-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Thin-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Thin-webfont.svg#RobotoThin') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-ThinItalic-webfont.eot');
+    src: url('../fonts/Roboto-ThinItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-ThinItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-ThinItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-ThinItalic-webfont.svg#RobotoThinItalic') format('svg'); (under the Apache Software License).
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-LightItalic-webfont.eot');
+    src: url('../fonts/Roboto-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-LightItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-LightItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-LightItalic-webfont.svg#RobotoLightItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium-webfont.eot');
+    src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Medium-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-MediumItalic-webfont.eot');
+    src: url('../fonts/Roboto-MediumItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-MediumItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-MediumItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-MediumItalic-webfont.svg#RobotoMediumItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('../fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+    }
+}
+
+/* HEADINGS */
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3.75rem;
+    line-height: 4.688rem;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 3.125rem;
+    line-height: 4.063rem;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.quote {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+/*---------------------------------------
+   CUSTOM BUTTON
+-------------------------------------------------- */
+
+.standard-button,
+.standard-button2 {
+    font-size: 18px;
+    font-weight: 400 !important;
+    border-radius: 4px !important;
+    text-shadow: 0 !important;
+    color: #ffffff;
+    min-width: 150px;
+    border: none;
+    padding: 16px 25px 16px 25px;
+    margin: 5px;
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+}
+
+.standard-button:hover,
+.standard-button2:hover {
+    border: none;
+}
+
+.standard-button i,
+.standard-button2 i {
+    vertical-align: inherit;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/*  TEXTS
+-------------------------------------------------- */
+
+.white-text {
+    color: #ffffff;
+}
+
+.dark-text {
+    color: #272727;
+}
+
+.grey-bg {
+    background: #F0F0F0 !important;
+}
+
+
+/*  SECTIONS
+-------------------------------------------------- */
+
+section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+section .left-align {
+    text-align: left;
+}
+
+section .right-align {
+    text-align: right;
+}
+
+section .feature-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.section-header {
+    padding-bottom: 40px;
+}
+
+.section-header h2 {
+    margin-bottom: 20px;
+}
+
+.section-header .section-description {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.section-header-compact {
+    padding-bottom: 20px;
+}
+
+.section-header-compact h2 {
+    margin-bottom: 10px;
+}
+
+.section-header-compact .section-description {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*---------------------------------------
+   LINES
+-------------------------------------------------- */
+
+.colored-line {
+    margin: auto;
+    z-index: 1;
+    width: 250px;
+    height: 1px;
+}
+
+.white-line {
+    margin: auto;
+    z-index: 1;
+    width: 250px;
+    height: 1px;
+    background: #ffffff;
+}
+
+.colored-line-left {
+    float: left;
+    z-index: 1;
+    display: block;
+    width: 250px;
+    height: 1px;
+}
+
+/*  SECTION STYLES
+-------------------------------------------------- */
+
+/*  SECTION:  TEXT/GENERIC
+-------------------------------------------------- */
+
+.text {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: left;
+    background: #ffffff;
+}
+
+.text ul,
+.text ol {
+    padding-left: 10 !important;
+}
+
+.text li {
+    list-style: square;
+}
+
+.generic {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #ffffff;
+}
+
+.top {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.download_only {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background: #ffffff;
+}
+
+/*  SECTION:  IMAGES
+-------------------------------------------------- */
+
+.crossfade {
+    position: relative;
+    min-height: 600px;
+}
+
+.crossfade img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+@-webkit-keyframes fade {
+    0% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.crossfade img.top {
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    -webkit-animation-name: fade;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 8s;
+}
+
+header .phone-image {
+    max-width: 300px;
+    margin-left: auto;  /* Right aligned */
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.opening .phone-image {
+    max-width: 350px;
+    margin: auto;
+}
+
+.crossfade {
+    max-width: 300px;
+    margin: auto;
+}
+
+.features .phone-image {
+    max-width: 300px;
+    margin: auto;
+}
+
+.download_only .phone-image {
+    max-width: 400px;
+    margin: auto;
+}
+
+.phone-image img {
+    width: 100%;
+}
+
+
+/*  SECTION:  HOME
+-------------------------------------------------- */
+/*
+header {
+    background: url('../images/party-3b.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+*/
+
+header {
+    background: url('../images/splash_5.jpg');
+    -webkit-background-attachment: scroll;
+    -webkit-background-repeat: no-repeat;
+    -webkit-background-position: center bottom;
+    -webkit-background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+header .color-overlay {
+    min-height: 600px;
+}
+
+header .full-screen {
+    width: 100%;
+    height: 100px;
+}
+
+/* TOP BAR WITH NAVIGATION */
+
+.sticky-navigation {
+    min-height: 60px;
+    background: #FFFFFF;
+    border: none;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+}
+
+.sticky-navigation .dropdown-menu {
+    text-align: left;
+}
+
+.sticky-navigation .navbar-toggle {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sticky-navigation .navbar-header img {
+    max-height: 50px;
+    -webkit-backface-visibility: hidden;
+}
+
+.sticky-navigation .main-navigation .current a {
+    color: #000000 !important;
+    position: relative;
+    outline: none;
+}
+
+.sticky-navigation .main-navigation li a {
+    line-height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.sticky-navigation .main-navigation li a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #313131;
+    background: #313131;
+}
+
+header .only-logo .navbar {
+    background: none;
+    padding: 40px;
+}
+
+header .only-logo .navbar .navbar-header {
+    float: none;
+}
+
+/* INTRO */
+
+header .home-contents {
+    margin-top: 5%;
+}
+
+header .intro-section {
+    text-align: left;
+}
+
+header .intro-section .standard-button {
+    margin: 0;
+}
+
+header .intro-section .logo-image {
+    max-width: 100px;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+header .logo-image img {
+    width: 100%;
+}
+
+header .intro-section .intro {
+    color: #ffffff;
+    margin-bottom: 36px;
+    margin-top: 8px;
+}
+
+header .intro-section h5 {
+    color: #ffffff;
+}
+
+header .intro-section .buttons {
+    margin-top: 35px;
+}
+
+/*  SECTION:  FORUMS
+-------------------------------------------------- */
+
+.forums {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #ffffff;
+}
+
+.mutt .nested {
+    margin-left: 1em;
+}
+
+.muut .m-header {
+   background-color: #fafafa;
+}
+
+.muut .m-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+}
+
+.muut .is-forum {
+    min-height: 400px;
+}
+
+/*  SECTION:  BLOG
+-------------------------------------------------- */
+
+.posts {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #ffffff;
+}
+
+/*  SECTION:  FEATURES
+-------------------------------------------------- */
+
+.features {
+    background: #ffffff;
+}
+
+.features .features-left {
+    text-align: right;
+}
+
+.features .features-left .icon-container {
+    float: right;
+    margin-left: 20px;
+}
+
+.features .features-right {
+    text-align: left;
+}
+
+.features .features-right .icon-container {
+    float: left;
+    margin-right: 20px;
+}
+
+.features .feature .icon-container {
+    display: block;
+    margin-top: 5px;
+}
+
+.features .feature .icon-container .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 24px;
+    text-align: center;
+    -webkit-transition: all ease-in 0.25s;
+    transition: all ease-in 0.25s;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+
+/*  SECTION:  VIDEO
+-------------------------------------------------- */
+
+/*
+.video .color-overlay {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}*/
+
+
+/*  SECTION:  TESTIMONIALS
+-------------------------------------------------- */
+
+.testimonials {
+    background: url('../images/party-4.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.testimonials .color-overlay {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.testimonials .feedback {
+    max-width: 750px;
+    margin: auto;
+}
+
+.testimonials .feedback .image {
+    font-size: 24px;
+    border: 2px solid transparent;
+    -webkit-box-shadow: 0px 0px 0px 2px #ffffff;
+    box-shadow: 0px 0px 0px 2px #ffffff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: auto;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.testimonials .feedback .image img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.testimonials .feedback .message {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.testimonials .feedback .name {
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+.testimonials .feedback .company-info {
+    font-size: 12px;
+}
+
+.testimonials .owl-theme .owl-controls .owl-page span {
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.testimonials .customNavigation a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*  SECTION:  SERVICES
+-------------------------------------------------- */
+
+.services {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background: #ffffff;
+}
+
+.services .single-service {
+    padding-bottom: 60px;
+}
+
+.services .single-service .service-icon {
+    font-size: 80px;
+}
+
+.services .single-service h3 {
+    margin-top: 20px;
+}
+
+
+/*  SECTION:  SCREENSHOTS
+-------------------------------------------------- */
+
+.screenshots .shot {
+    background: #FFFFFF;
+    padding: 10px;
+    margin: 13px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block;
+}
+
+.screenshots .shot img {
+    border-radius: 4px;
+    width: 100%;
+}
+
+/*  SECTION:  DOWNLOAD
+-------------------------------------------------- */
+
+/*.download {
+    color: #ffffff;
+}*/
+
+.download {
+    background: url('../images/splash_3.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.download .color-overlay {
+    padding-top: 110px;
+    padding-bottom: 70px;
+}
+
+.download .download-container {
+    padding-bottom: 80px;
+}
+
+.download .subscription-form-container {
+    padding-bottom: 80px;
+}
+
+.download .subscription-form .input-box {
+    height: 57px;
+    padding-left: 20px;
+    width: 320px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #FFF;
+    border: 2px solid #FFF;
+}
+
+.download .subscription-form .input-box:focus,
+.download .subscription-form .input-box:active {
+    color: #000;
+    font-weight: 400;
+}
+
+.download .subscription-form .subscription-success,
+.download .subscription-form .subscription-error {
+    display: none;
+}
+
+.download h2 {
+    margin-bottom: 30px;
+}
+
+/* CONTACT
+-------------------------------------------------- */
+
+.contact {
+    background: #ffffff;
+    padding-top: 0px;
+}
+
+.contact .contact-box .contact-button {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    font-size: 30px;
+    line-height: 60px;
+    vertical-align: middle;
+    margin-top: -40px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 0px 0px 3px #ffffff;
+    box-shadow: 0px 0px 0px 3px #ffffff;
+    -webkit-backface-visibility: hidden;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.contact .contact-box .contact-button:hover {
+    color: #ffffff;
+}
+
+.contact .contact-box .expanded-contact-form {
+    margin-top: 40px;
+    display: none;
+}
+
+.contact .contact-box .expanded-contact-form .success,
+.contact .contact-box .expanded-contact-form .error {
+    display: none;
+}
+
+.contact .contact-box .expanded-contact-form .input-box {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.contact .contact-box .expanded-contact-form .textarea-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.contact .contact-box .expanded-contact-form .textarea-box:active {
+    color: #000;
+}
+
+/* SOCIAL
+-------------------------------------------------- */
+
+.social .social-icons {
+    margin-top: 20px;
+}
+
+.social .social-icons li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.social .social-icons li a {
+    font-size: 30px;
+    color: #c2c2c2;
+}
+
+/* FOOTER
+-------------------------------------------------- */
+
+footer {
+    /* Body margin must match */
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer_links {
+    border-top: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+}
+
+footer .nav-tabs > li, .nav-pills > li {
+    float: none;
+    display: inline-block;
+    /* ie7 fix */
+    *display: inline;
+    /* hasLayout ie7 trigger */
+    zoom: 1;
+}
+
+footer .nav-tabs, .nav-pills {
+    text-align: center;
+}
