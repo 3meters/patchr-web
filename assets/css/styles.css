@@ -296,6 +296,11 @@ h5 {
     line-height: 38px;
 }
 
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*---------------------------------------
    CUSTOM BUTTON
 -------------------------------------------------- */
@@ -515,7 +520,7 @@ header .phone-image {
 }
 
 .opening .phone-image {
-    max-width: 350px;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -550,7 +555,7 @@ header {
 */
 
 header {
-    background: url('../images/splash_5.jpg');
+    background: url('../images/splash_8_blur_30.jpg');
     -webkit-background-attachment: scroll;
     -webkit-background-repeat: no-repeat;
     -webkit-background-position: center bottom;
@@ -560,7 +565,6 @@ header {
     background-position: center bottom;
     background-size: cover;
 }
-
 header .color-overlay {
     min-height: 600px;
 }

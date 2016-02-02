@@ -1,6 +1,6 @@
 application: com-3meters-web
 version: 1
-runtime: php
+runtime: php55
 api_version: 1
 threadsafe: yes
 
@@ -53,16 +53,19 @@ handlers:
 
 # Serve non-static pages by endpoint
 - url: /
-  script: views/home.html
+  script: views/teaser.html
 
 - url: /home
-  script: views/home.html
+  script: views/teaser.html
+
+- url: /about
+  script: views/about.html
+
+- url: /contact
+  script: views/contact.html
 
 - url: /download
   script: views/download.html
-
-- url: /forums
-  script: views/forums.html
 
 - url: /privacy
   script: views/privacy.html
@@ -72,6 +75,9 @@ handlers:
 
 - url: /android
   script: views/android.html
+
+- url: /ios
+  script: views/ios.html
 
 - url: /rules
   script: views/rules.html

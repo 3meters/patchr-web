@@ -19,6 +19,14 @@ a:hover {
 /*  NAVBAR
 -------------------------------------------------- */
 
+.gradient {
+  background: #ff7600; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, #ff7600, #69d3e7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, #ff7600, #69d3e7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, #ff7600, #69d3e7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, #ff7600, #69d3e7); /* Standard syntax */
+}
+
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
@@ -29,7 +37,6 @@ a:hover {
 .navbar-inverse .navbar-nav>li>a {
     color:#000000
 }
-
 
 /*  FORUMS
 -------------------------------------------------- */
