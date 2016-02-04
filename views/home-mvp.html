@@ -2,20 +2,118 @@
 <html lang="en">
 
 <head>
+	<title>Patchr</title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content=" Easy, real-time social sharing. The fastest way to connect experiences to location. Share with friends, or connect with users in proximity to your location.">
 	<meta name="keywords" content="Patch, Personalized, Private, Social, Sharing, Easy, Location, App, Mobile, Android">
 	<meta name="author" content="3meters">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- SITE TITLE -->
-	<title>
-		Patchr
-	</title>
+    
+    <!-- Twitter app card
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:site" content="@PatchrApp">
+    <meta name="twitter:description" content="Patchr is a fast, simple and beautiful way to share photos and messages using lightweight casual groups. Create a patch for any occasion, place, project or interest and then invite just the right people!">
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Patchr">
+    <meta name="twitter:app:id:iphone" content="983436323">
+    <meta name="twitter:app:url:iphone" content="patchr://lobby">
+    <meta name="twitter:app:name:ipad" content="Patchr">
+    <meta name="twitter:app:id:ipad" content="983436323">
+    <meta name="twitter:app:url:ipad" content="patchr://lobby">
+    <meta name="twitter:app:name:googleplay" content="Patchr">
+    <meta name="twitter:app:id:googleplay" content="com.patchr.android">
+    <meta name="twitter:app:url:googleplay" content="http://patchr.com/lobby">-->
+
+	<!-- Twitter content card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@patchrapp">
+	<meta name="twitter:creator" content="@patchrapp">
+	<meta name="twitter:title" content="Right moment. Right people. Right now.">
+	<meta name="twitter:description" content="Patchr is a fast, simple and beautiful way to share photos and messages using lightweight casual groups. Create a patch for any occasion, place, project or interest and then invite just the right people!">
+	<meta name="twitter:image" content="http://patchr.com/images/handshot-1.jpg">
+    
 	<?php include "includes/include_head.html" ?>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v2.0.0.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setIdentity track validateCode".split(" "), 0);
+		branch.init('key_live_aabKfhL9u6piQ93E2lzVslklzraKnSc3');
+
+            function sendSMS(form) {
+                var phone = form.phone.value;
+                var linkData = {
+                    tags: [],
+                    channel: 'Website',
+                    feature: 'TextMeTheApp',
+                    data: {
+                        'foo': 'bar'
+                    }
+                };
+                var options = {};
+                var callback = function(err, result) {
+                    if (err) {
+                        alert("Sorry, something went wrong.");
+                    }
+                    else {
+                        addAlert("Text message sent!");
+                    }
+                };
+                branch.sendSMS(phone, linkData, options, callback);
+                form.phone.value = "";
+            }
+
+		function createUUID() {
+	        // http://www.ietf.org/rfc/rfc4122.txt
+	        var s = [];
+	        var hexDigits = "0123456789abcdef";
+	        for (var i = 0; i < 36; i++) {
+	            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+	        }
+	        s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+	        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+	        s[8] = s[13] = s[18] = s[23] = "-";
+
+	        var uuid = s.join("");
+	        return uuid;
+	    }
+
+	    function addAlert(message) {
+	        var id = createUUID();
+	        var JQueryId = "#" + id;
+
+	        $('#alerts').append('<div class="btn-info btn-lg" id="' + id + '">' + message + '</div>');
+
+	        $(JQueryId).fadeIn(400);
+
+	        window.setTimeout(function () {
+	            // closing the popup
+	            $(JQueryId).fadeTo(400, 0.0).slideUp(2000, function () {
+	                $(JQueryId).alert('close');
+	            });
+	        }, 3000);
+	    }
+    </script>
+
 	<!-- Override for fat sticky footer -->
 	<style>
-		body { margin-bottom: 130px; }
-		footer { height: 130px; }
+		body {
+			margin-bottom: 130px;
+		}
+		footer {
+			height: 130px;
+		}
+		.toast-holder {
+			position:absolute;
+			left:0;
+			right:0;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.toast-holder > div {
+			position: relative;
+		}
 	</style>
 </head>
 
@@ -34,6 +132,7 @@
 
 		<!-- CONTAINER -->
 		<div class="container">
+			<div id="alerts" class="toast-holder"></div>
 			<div class="row home-contents">
 				<div class="col-md-7 col-sm-6">
 					<!-- HEADING AND BUTTONS -->
@@ -47,36 +146,49 @@
 								Patchr
 							</h1>
 
-							<h2 style="line-height:90%">
-								Fast. Simple. Beautiful.
+							<h2 style="line-height:100%">
+								Right moment. Right people. Right now.
 							</h2>
 						</div>
-						<h5>
-							Available now for iPhone and Android
-						</h5>
+						<div>
+							<span class="white-text" style="max-width: 300px">
+								Enter your mobile phone number and we'll send you a download link.
+							</span>
+						</div>
+
+						<div style="margin-top:10px;margin-bottom:10px">
+							<form class="form-inline" role="form" onsubmit="sendSMS(this); return false;">
+								<div class="input-group">
+									<input id="phone" class="input-lg form-control" onfocus="this.placeholder=''" onblur="this.placeholder='(555) 123-4567'" name="phone" type="tel" placeholder="(555) 123-4567" />
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-lg btn-warning" style="margin-left:5px">Send</button>
+									</span>
+								</div>
+							</form>
+						</div>
 
 						<div class="row">
-							<a class="badge" href="https://geo.itunes.apple.com/us/app/patchr/id983436323?mt=8">
+							<a class="col-md-1 badge" style="margin-left:15px;margin-bottom:10px" href="https://geo.itunes.apple.com/us/app/patchr/id983436323?mt=8">
 								<svg class="badge__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 20 20">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M17.5640259,13.8623047
-                    c-0.4133301,0.9155273-0.6115723,1.3251343-1.1437988,2.1346436c-0.7424927,1.1303711-1.7894897,2.5380249-3.086853,2.5500488
-                    c-1.1524048,0.0109253-1.4483032-0.749939-3.0129395-0.741333c-1.5640259,0.008606-1.8909302,0.755127-3.0438843,0.7442017
-                    c-1.296814-0.0120239-2.2891235-1.2833252-3.0321655-2.4136963c-2.0770874-3.1607666-2.2941895-6.8709106-1.0131836-8.8428955
-                    c0.9106445-1.4013062,2.3466187-2.2217407,3.6970215-2.2217407c1.375,0,2.239502,0.7539673,3.3761597,0.7539673
-                    c1.1028442,0,1.7749023-0.755127,3.3641357-0.755127c1.201416,0,2.4744263,0.6542969,3.3816528,1.7846069
-                    C14.0778809,8.4837646,14.5608521,12.7279663,17.5640259,13.8623047z M12.4625244,3.8076782
-                    c0.5775146-0.741333,1.0163574-1.7880859,0.8571167-2.857666c-0.9436035,0.0653076-2.0470581,0.6651611-2.6912842,1.4477539	C10.0437012,3.107605,9.56073,4.1605835,9.7486572,5.1849365C10.7787476,5.2164917,11.8443604,4.6011963,12.4625244,3.8076782z"/>
+					                    c-0.4133301,0.9155273-0.6115723,1.3251343-1.1437988,2.1346436c-0.7424927,1.1303711-1.7894897,2.5380249-3.086853,2.5500488
+					                    c-1.1524048,0.0109253-1.4483032-0.749939-3.0129395-0.741333c-1.5640259,0.008606-1.8909302,0.755127-3.0438843,0.7442017
+					                    c-1.296814-0.0120239-2.2891235-1.2833252-3.0321655-2.4136963c-2.0770874-3.1607666-2.2941895-6.8709106-1.0131836-8.8428955
+					                    c0.9106445-1.4013062,2.3466187-2.2217407,3.6970215-2.2217407c1.375,0,2.239502,0.7539673,3.3761597,0.7539673
+					                    c1.1028442,0,1.7749023-0.755127,3.3641357-0.755127c1.201416,0,2.4744263,0.6542969,3.3816528,1.7846069
+					                    C14.0778809,8.4837646,14.5608521,12.7279663,17.5640259,13.8623047z M12.4625244,3.8076782
+					                    c0.5775146-0.741333,1.0163574-1.7880859,0.8571167-2.857666c-0.9436035,0.0653076-2.0470581,0.6651611-2.6912842,1.4477539	C10.0437012,3.107605,9.56073,4.1605835,9.7486572,5.1849365C10.7787476,5.2164917,11.8443604,4.6011963,12.4625244,3.8076782z"/>
 								</svg>
 								<span class="badge__text">Download on the</span>
 								<span class="badge__storename">App Store</span>
 							</a>
-							<a class="badge" href="https://play.google.com/store/apps/details?id=com.patchr.android&utm_source=patchr_web&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
+							<a class="col-md-1 badge" style="margin-left:10px;margin-bottom:10px" href="https://play.google.com/store/apps/details?id=com.patchr.android&utm_source=patchr_web&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
 								<svg class="badge__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 20 20">
 									<path d="M4.942627,18.0508423l7.6660156-4.3273926l-1.6452026-1.8234253L4.942627,18.0508423z M2.1422119,2.1231079
-                    C2.0543823,2.281311,2,2.4631958,2,2.664917v15.1259766c0,0.2799683,0.1046143,0.5202026,0.2631226,0.710144l7.6265259-7.7912598
-                    L2.1422119,2.1231079z M17.4795532,9.4819336l-2.6724854-1.508606l-2.72229,2.7811279l1.9516602,2.1630249l3.4431152-1.9436035
-                    C17.7927856,10.8155518,17.9656372,10.5287476,18,10.2279053C17.9656372,9.927063,17.7927856,9.6402588,17.4795532,9.4819336z
-                    M13.3649292,7.1592407L4.1452026,1.954834l6.8656616,7.609314L13.3649292,7.1592407z"/>
+					                    C2.0543823,2.281311,2,2.4631958,2,2.664917v15.1259766c0,0.2799683,0.1046143,0.5202026,0.2631226,0.710144l7.6265259-7.7912598
+					                    L2.1422119,2.1231079z M17.4795532,9.4819336l-2.6724854-1.508606l-2.72229,2.7811279l1.9516602,2.1630249l3.4431152-1.9436035
+					                    C17.7927856,10.8155518,17.9656372,10.5287476,18,10.2279053C17.9656372,9.927063,17.7927856,9.6402588,17.4795532,9.4819336z
+					                    M13.3649292,7.1592407L4.1452026,1.954834l6.8656616,7.609314L13.3649292,7.1592407z"/>
 								</svg>
 								<span class="badge__text">Get it on</span>
 								<span class="badge__storename">Google Play</span>
@@ -129,9 +241,18 @@
 			<!-- BRIEF -->
 			<div class="col-md-5 left-align wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 				<p>
-					Patchr is a fast, simple and beautiful way to share photos and messages using lightweight
-					casual groups. Create a patch for any occasion, place, project or interest and then
-					invite just the right friends!
+					Patchr is a fast, simple and beautiful way to share photos and messages using
+					lightweight casual groups. Create a patch for any occasion, place, project or
+					interest and then invite just the right people!
+				</p>
+				<p>
+					Gathering people to your patch is fast and simple! Not in your contacts? No
+					problem. Dynamic
+					proximity features notify nearby Patchr users when your patch is activated for
+					fast group building. Discover and join patches that are already nearby. For
+					people you already know, invite
+					them fast using the apps you love including email, messaging, or
+					Facebook.
 				</p>
 			</div>
 			<!-- /ENDBRIEF -->

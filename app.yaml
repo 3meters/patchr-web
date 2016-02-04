@@ -15,6 +15,11 @@ handlers:
   mime_type: image/*
   expiration: 1s
 
+- url: /favicons
+  static_dir: assets/images/favicons
+  mime_type: image/*
+  expiration: 1s
+
 - url: /video
   static_dir: assets/video
   mime_type: video/*
