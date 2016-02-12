@@ -1,0 +1,11 @@
+dispatch:
+  # Default module serves the typical web resources and all static resources.
+  - url: "3meters.com/*"
+    module: teaser
+
+  - url: "*.3meters.com/*"
+    module: teaser
+
+  # Default module serves simple hostname request.
+  - url: "patchr.com/*"
+    module: default

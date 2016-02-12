@@ -278,9 +278,10 @@ h3 {
 }
 
 h4 {
-    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
     line-height: 30px;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 h5 {
@@ -574,6 +575,19 @@ header {
     background-position: center bottom;
     background-size: cover;
 }
+
+header.teaser {
+    background: url('../images/splash_5.jpg');
+    -webkit-background-attachment: scroll;
+    -webkit-background-repeat: no-repeat;
+    -webkit-background-position: center bottom;
+    -webkit-background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+
 header .color-overlay {
     min-height: 600px;
 }

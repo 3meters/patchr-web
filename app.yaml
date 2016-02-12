@@ -1,6 +1,7 @@
 application: com-3meters-web
 version: 1
 runtime: php55
+module: default
 api_version: 1
 threadsafe: yes
 
@@ -57,6 +58,7 @@ handlers:
   script: \1
 
 # Serve non-static pages by endpoint
+
 - url: /
   script: views/home-mvp.html
 
