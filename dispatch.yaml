@@ -9,3 +9,6 @@ dispatch:
   # Default module serves simple hostname request.
   - url: "patchr.com/*"
     module: default
+
+  - url: "*.patchr.com/*"
+    module: default

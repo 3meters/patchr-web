@@ -74,8 +74,14 @@ handlers:
 - url: /download
   script: views/download.html
 
+- url: /marketing
+  script: views/marketing.html
+
 - url: /privacy
   script: views/privacy.html
+
+- url: /reset
+  script: views/reset.html
 
 - url: /terms
   script: views/terms.html
