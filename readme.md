@@ -1,4 +1,4 @@
-3metersweb
+Teeny-social-web
 =============
 
-Website for 3meters.
+Website for Teeny Social.

@@ -12,3 +12,9 @@ dispatch:
 
   - url: "*.patchr.com/*"
     module: default
+
+  - url: "teenysocial.com/*"
+    module: default
+
+  - url: "*.teenysocial.com/*"
+    module: default
