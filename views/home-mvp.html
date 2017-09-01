@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Teeny Social</title>
+    <title>Patchr</title>
 
     <meta charset="UTF-8">
-    <meta name="description" content="Teeny Social is a social sharing app designed for people who want just enough sharing">
-    <meta name="keywords" content="Teeny Social, Personalized, Private, Social, Sharing, Easy, Location, App, Mobile, Android">
+    <meta name="description" content="Patchr is a social sharing app designed for people who want just enough sharing">
+    <meta name="keywords" content="Patchr, Personalized, Private, Social, Sharing, Easy, Location, App, Mobile, Android">
     <meta name="author" content="3meters">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,9 +27,9 @@
 
     <!-- Twitter content card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@patchrapp">
-    <meta name="twitter:creator" content="@patchrapp">
-    <meta name="twitter:title" content="Right moment. Right people. Right now.">
+    <meta name="twitter:site" content="@teenysocial">
+    <meta name="twitter:creator" content="@teenysocial">
+    <meta name="twitter:title" content="Just enough sharing.">
     <meta name="twitter:description" content="Patchr is a fast, simple and beautiful way to share just enough.">
     <meta name="twitter:image" content="http://patchr.com/images/handshot-1.jpg">
 
@@ -37,13 +37,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
         (function (b, r, a, n, c, h, _, s, d, k) {
             if (!b[n] || !b[n]._q) {
                 for (; s < _.length;) c(h, _[s++]);
                 d = r.createElement(a);
                 d.async = 1;
-                d.src = "https://cdn.branch.io/branch-v2.0.0.min.js";
+                d.src = "https://cdn.branch.io/branch-latest.min.js";
                 k = r.getElementsByTagName(a)[0];
                 k.parentNode.insertBefore(d, k);
                 b[n] = h
@@ -56,7 +57,7 @@
                 _q: [],
                 _v: 1
             },
-            "addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setIdentity track validateCode"
+            "addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode"
             .split(" "), 0);
         branch.init('key_live_aabKfhL9u6piQ93E2lzVslklzraKnSc3');
 
@@ -65,14 +66,14 @@
             var linkData = {
                 tags: [],
                 channel: 'website',
-                feature: 'TextMeTheApp'
+                feature: 'TextMeTheApp',
             };
             var options = {};
             var callback = function (err, result) {
                 if (err) {
                     alert("Sorry, something went wrong.");
                 } else {
-                    addAlert("Text message sent!");
+                    alert("SMS sent!");
                 }
             };
             branch.sendSMS(phone, linkData, options, callback);
@@ -160,12 +161,11 @@
                                 <img src="images/patchr-android-icon-512.png" alt="">
                             </div>
                             <div class="intro" style="margin-bottom: 100px;">
-                                <h1 style="margin-bottom: -8px;">
-                                    Teeny Social
+                                <h1 style="margin-bottom: -24px;">
+                                    Patchr
                                 </h1>
-
                                 <h2 style="line-height:100%">
-                                    Share just enough.
+                                    Just enough sharing.
                                 </h2>
                             </div>
                             <div>
@@ -231,7 +231,7 @@
             <div class="section-header wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
                 <!-- SECTION TITLE -->
                 <h2 class="dark-text">
-                    Tired of oversharing to the wrong people?</h2>
+                    Are you oversharing?</h2>
                 <div class="colored-line">
                 </div>
             </div>
@@ -243,7 +243,7 @@
                 <div class="col-md-6 col-md-offset-1 wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
                     <div class="phone-image">
                         <!--<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="border: 1px solid #FF7600;padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_z00yarnv9j popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>-->
-                        <img src="images/desk_4.jpg" alt="">
+                        <img src="images/hand_channel_2.jpg" alt="">
                     </div>
                 </div>
                 <!-- /END PHONES IMAGE -->
@@ -251,9 +251,9 @@
                 <!-- BRIEF -->
                 <div class="col-md-5 left-align wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
                     <p>
-                        Teeny Social is a social sharing app designed for people who want just enough sharing. Some social sharing apps can overshare
-                        making all messages and photos available to the wrong people or just too many people. Teeny Social stops oversharing by using private
-                        invitations that let you control who can see your messages and how they can participate:
+                        Patchr is a social sharing app designed for people who want just enough sharing. Some social sharing apps can overshare making
+                        it hard to tell if messages and photos are shared with just the right people. Available for iPhone and iPad, Patchr stops oversharing
+                        by using private invitations that let you control who can see messages and how they can participate:
                         <ul>
                             <li>
                                 Invite the right people using invitations.
@@ -266,14 +266,16 @@
                             </li>
                         </ul>
                     </p>
+                    <h4>
+                        <span style="color:#44C0D7">Share events, topics or just life using a Patchr channel</span>
+                    </h4>
                     <p>
-                        Share events, topics or just life using a Teeny channel.
+                        Patchr has brilliant sharing features: photo search and editing, reactions, comments, realtime notifications, offline posting
+                        plus much more.
                     </p>
                     <p>
-                        Teeny Social has brilliant sharing features: photo search and editing, reactions, comments, realtime notifications, offline posting plus much more.
-                    </p>
-                    <p>
-                        Invite people from your contacts and we handle the rest! We will email them an invitation, help them install Teeny Social and gently launch them into your amazing channel.
+                        Invite people from your contacts and we handle the rest! We email them an invitation, help them install Patchr and gently
+                        launch them into your amazing channel.
                     </p>
                 </div>
                 <!-- /ENDBRIEF -->

@@ -1,4 +1,4 @@
-Teeny-social-web
+patchr-web
 =============
 
-Website for Teeny Social.
+Website for Patchr.
